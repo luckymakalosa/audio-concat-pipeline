@@ -44,7 +44,7 @@ Originally built for a structured spoken-audio corpus, the pipeline is **domain-
 ```
 audio-concat-pipeline/
 ├── scripts/
-│ ├── generate-lists.ps1 # Build ordered concat lists
+│ ├── build-lists.ps1 # Build ordered concat lists
 │ ├── build-surah.ps1 # Segment → collection merge
 │ └── build-quran.ps1 # Collection → full-length merge
 ├── ffmpeg/
@@ -59,7 +59,7 @@ audio-concat-pipeline/
 ### Generate concat list
 Creates deterministic file lists for FFmpeg concatenation.
 ```powershell
-.\scripts\generate-lists.ps1
+.\scripts\build-lists.ps1
 ```
 ### Build collection-level audio outputs
 Merges small audio segments into logical collections.
