@@ -83,7 +83,7 @@ Screenshots below demonstrate the pipeline execution, FFmpeg processing, and fin
 ![Building Surah MP3s](screenshots/build-surah.jpg)
 
 ### Building Full Audio Output with Normalization
-![Building Full Quran with Normalization](screenshots/build-quran.jpg)
+![Building Full Quran with Normalization](screenshots/final-audio-file-properties.jpg)
 
 ### Final Audio File Properties
 ![Audio Properties](screenshots/build-quran.jpg)
