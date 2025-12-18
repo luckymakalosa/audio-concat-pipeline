@@ -1,3 +1,4 @@
+# build-quran.ps1
 # Builds a single long-form audio file with loudness normalization.
 
 ffmpeg -f concat -safe 0 -i list.txt `
