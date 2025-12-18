@@ -1,4 +1,3 @@
-# build-surah.ps1
 # Merges small audio segments into grouped outputs
 # using FFmpeg concat demuxer.
 
