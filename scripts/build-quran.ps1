@@ -1,5 +1,7 @@
 # build-quran.ps1
-# Builds a single normalized Quran audio file from individual surah MP3s.
+# Concatenates all Surah MP3s into a single long-form audio file.
+# Applies EBU R128 loudness normalization for consistent volume across the entire Quran.
+# Produces production-ready final output (~29 hours) using FFmpeg.
 
 $Root       = Resolve-Path "$PSScriptRoot\.."
 $SurahPath  = Join-Path $Root "surah"
