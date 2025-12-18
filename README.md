@@ -1,3 +1,7 @@
+![FFmpeg](https://img.shields.io/badge/FFmpeg-Audio-blue)
+![PowerShell](https://img.shields.io/badge/PowerShell-Automation-5391FE)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 # Audio Concat Pipeline
 
 Automated audio processing pipeline using FFmpeg and PowerShell.
