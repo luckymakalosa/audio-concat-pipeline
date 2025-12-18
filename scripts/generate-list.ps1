@@ -1,3 +1,6 @@
+# build-lists.ps1
+# Generates per-Surah file lists including taʿawwudh and basmalah (except for Surah 009).
+
 $Root = Resolve-Path "$PSScriptRoot\.."
 
 $InputPath = Join-Path $Root "input"
