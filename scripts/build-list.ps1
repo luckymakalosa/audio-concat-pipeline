@@ -1,5 +1,6 @@
 # build-lists.ps1
-# Generates per-Surah file lists including taʿawwudh and basmalah (except for Surah 009).
+# Generates per-Surah MP3 concat lists including taʿawwudh and basmalah.
+# Handles Surah 009 exception and ensures deterministic file ordering for FFmpeg.
 
 $Root = Resolve-Path "$PSScriptRoot\.."
 
