@@ -21,7 +21,7 @@ Originally built for a structured spoken-audio corpus, the pipeline is domain-ag
 ---
 
 ## Features
-- Batch processing of **6,236 MP3 files**
+- Batch processing of **6,236+ MP3 files** (scalable to tens of thousands)
 - Multi-stage merge:
   - Segment → Collection
   - Collection → Full-length output
