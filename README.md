@@ -41,6 +41,7 @@ Originally built for a structured spoken-audio corpus, the pipeline is **domain-
 ---
 
 ## Project Structure
+```
 audio-concat-pipeline/
 ├── scripts/
 │ ├── generate-list.ps1 # Build ordered concat lists
@@ -49,6 +50,7 @@ audio-concat-pipeline/
 ├── ffmpeg/
 │ └── commands.md # FFmpeg reference commands
 └── README.md
+```
 
 ---
 
