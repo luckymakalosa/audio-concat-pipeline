@@ -57,14 +57,17 @@ audio-concat-pipeline/
 
 ## Usage
 ### Generate concat list
+Creates deterministic file lists for FFmpeg concatenation.
 ```powershell
 .\scripts\generate-list.ps1
 ```
-### Build grouped audio outputs
+### Build collection-level audio outputs
+Merges small audio segments into logical collections.
 ```powershell
 .\scripts\build-surah.ps1
 ```
 ### Build final long-form audio (normalized)
+Produces a single long-duration MP3 with consistent loudness.
 ```powershell
 ffmpeg -f concat -safe 0 -i list.txt ^
 -filter:a loudnorm ^
@@ -72,6 +75,17 @@ ffmpeg -f concat -safe 0 -i list.txt ^
 ```
 
 ---
+
+## Screenshots
+Screenshots below demonstrate the pipeline execution, FFmpeg processing, and final output validation.
+### Script Execution (PowerShell)
+![PowerShell Execution](screenshots/powershell-build.png)
+
+### FFmpeg Processing Output
+![FFmpeg Output](screenshots/ffmpeg-output.png)
+
+### Final Audio File Properties
+![Audio Properties](screenshots/final-audio-properties.png)
 
 ## Audio Processing Details
 - Codec: MP3 (libmp3lame)
