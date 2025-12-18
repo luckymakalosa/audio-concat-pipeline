@@ -1,16 +1,33 @@
-# build-surah.ps1
-# Merges small audio segments into grouped outputs
-# using FFmpeg concat demuxer.
+$Root = Resolve-Path "$PSScriptRoot\.."
 
-param (
-    [string]$InputPath = ".\surah",
-    [string]$OutputFile = "quran.txt"
-)
+$ListPath   = Join-Path $Root "lists"
+$OutputPath = Join-Path $Root "surah"
 
-Get-ChildItem $InputPath -Filter "*.mp3" |
+if (-not (Test-Path $ListPath)) {
+    Write-Error "lists folder not found: $ListPath"
+    exit 1
+}
+
+# Create surah output folder if it doesn't exist
+New-Item -ItemType Directory -Force -Path $OutputPath | Out-Null
+
+Get-ChildItem $ListPath -Filter "*.txt" |
     Sort-Object Name |
     ForEach-Object {
-        "file '$($_.FullName)'"
-    } | Out-File $OutputFile -Encoding utf8
 
-Write-Host "Final Quran concat list generated"
+        $surah = $_.BaseName
+        $output = Join-Path $OutputPath "$surah.mp3"
+
+        Write-Host "Building Surah $surah..."
+
+        # Re-encode to fix DTS issues
+        ffmpeg -y `
+            -f concat -safe 0 `
+            -i $_.FullName `
+            -c:a libmp3lame -b:a 128k `
+            -ar 44100 `
+            -ac 2 `
+            $output
+    }
+
+Write-Host "All surahs built successfully."
