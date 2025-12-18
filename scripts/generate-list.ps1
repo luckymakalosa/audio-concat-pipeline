@@ -1,3 +1,4 @@
+# generate-list.ps1
 # Generates deterministic FFmpeg concat list files
 # based on ordered audio segments.
 
