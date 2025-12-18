@@ -3,14 +3,23 @@
 # based on ordered audio segments.
 
 param (
-    [string]$InputPath = ".",
-    [string]$OutputFile = "list.txt"
+    [string]$InputPath = ".\input",
+    [string]$ListPath  = ".\lists"
 )
 
-Get-ChildItem $InputPath -Filter *.mp3 |
-    Sort-Object Name |
-    ForEach-Object {
-        "file '$($_.FullName)'" 
-    } | Out-File $OutputFile -Encoding utf8
+# Ensure output directory exists
+New-Item -ItemType Directory -Force -Path $ListPath | Out-Null
 
-Write-Host "Concat list generated: $OutputFile"
+Get-ChildItem $InputPath -Filter "*.mp3" |
+    Sort-Object Name |
+    Group-Object { $_.Name.Substring(0,3) } |
+    ForEach-Object {
+        $surah = $_.Name
+        $listFile = Join-Path $ListPath "$surah.txt"
+
+        $_.Group | ForEach-Object {
+            "file '$($_.FullName)'"
+        } | Out-File $listFile -Encoding utf8
+
+        Write-Host "Generated list for Surah $surah"
+    }
