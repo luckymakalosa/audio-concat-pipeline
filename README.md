@@ -79,7 +79,7 @@ ffmpeg -f concat -safe 0 -i list.txt ^
 ## Screenshots
 Screenshots below demonstrate the pipeline execution, FFmpeg processing, and final output validation.
 ### Script Execution (PowerShell)
-![PowerShell Execution](screenshots/build-list.jpg)
+![PowerShell Execution](screenshots/build-lists.jpg)
 
 ### FFmpeg Processing Output
 ![FFmpeg Output](screenshots/ffmpeg-output.png)
