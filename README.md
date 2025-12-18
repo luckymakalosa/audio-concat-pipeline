@@ -5,9 +5,9 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-A production-ready **audio processing and automation pipeline** for large-scale MP3 concatenation.
-This project processes **thousands of small audio segments (6,236 files)** into structured long-form outputs using **FFmpeg** and **PowerShell**.
-Originally built for a structured spoken-audio corpus, the pipeline is **domain-agnostic** and applicable to audiobooks, lectures, podcasts, and archival audio.
+A production-ready audio processing and automation pipeline for large-scale MP3 concatenation.
+This project processes thousands of small audio segments (6,236 files) into structured long-form outputs using FFmpeg and PowerShell.
+Originally built for a structured spoken-audio corpus, the pipeline is domain-agnostic and applicable to audiobooks, lectures, podcasts, and archival audio.
 
 ---
 
@@ -62,29 +62,27 @@ Creates deterministic file lists for FFmpeg concatenation.
 .\scripts\build-lists.ps1
 ```
 ### Build collection-level audio outputs
-Merges small audio segments into logical collections.
+Merges small audio segments into logical collections (e.g., chapters, sections, or grouped segments).
 ```powershell
 .\scripts\build-surah.ps1
 ```
 ### Build final long-form audio (normalized)
-Produces a single long-duration MP3 with consistent loudness.
+Produces a single long-duration MP3 with consistent loudness for continuous playback.
 ```powershell
-ffmpeg -f concat -safe 0 -i list.txt ^
--filter:a loudnorm ^
--c:a libmp3lame -b:a 128k Al-Quran.mp3
+.\scripts\build-quran.ps1
 ```
 
 ---
 
 ## Screenshots
 Screenshots below demonstrate the pipeline execution, FFmpeg processing, and final output validation.
-### Generating Per-Surah File Lists
+### Generating Collection File Lists
 ![Generating Per-Surah File Lists](screenshots/build-lists.jpg)
 
-### Building Surah MP3s
+### Building Collection MP3s
 ![Building Surah MP3s](screenshots/build-surah.jpg)
 
-### Building Full Quran with Normalization
+### Building Full Audio Output with Normalization
 ![Building Full Quran with Normalization](screenshots/build-quran.jpg)
 
 ### Final Audio File Properties
