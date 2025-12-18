@@ -78,14 +78,17 @@ ffmpeg -f concat -safe 0 -i list.txt ^
 
 ## Screenshots
 Screenshots below demonstrate the pipeline execution, FFmpeg processing, and final output validation.
-### Script Execution (PowerShell)
-![PowerShell Execution](screenshots/build-lists.jpg)
+### Generating Per-Surah File Lists
+![Generating Per-Surah File Lists](screenshots/build-lists.jpg)
 
-### FFmpeg Processing Output
-![FFmpeg Output](screenshots/ffmpeg-output.png)
+### Building Surah MP3s
+![Building Surah MP3s](screenshots/build-surah.jpg)
+
+### Building Full Quran with Normalization
+![Building Full Quran with Normalization](screenshots/build-quran.jpg)
 
 ### Final Audio File Properties
-![Audio Properties](screenshots/final-audio-properties.png)
+![Audio Properties](screenshots/build-quran.jpg)
 
 ## Audio Processing Details
 - Codec: MP3 (libmp3lame)
