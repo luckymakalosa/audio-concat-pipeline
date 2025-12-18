@@ -44,7 +44,7 @@ Originally built for a structured spoken-audio corpus, the pipeline is **domain-
 ```
 audio-concat-pipeline/
 ├── scripts/
-│ ├── generate-list.ps1 # Build ordered concat lists
+│ ├── generate-surah-lists.ps1 # Build ordered concat lists
 │ ├── build-surah.ps1 # Segment → collection merge
 │ └── build-quran.ps1 # Collection → full-length merge
 ├── ffmpeg/
@@ -59,7 +59,7 @@ audio-concat-pipeline/
 ### Generate concat list
 Creates deterministic file lists for FFmpeg concatenation.
 ```powershell
-.\scripts\generate-list.ps1
+.\scripts\generate-surah-lists.ps1
 ```
 ### Build collection-level audio outputs
 Merges small audio segments into logical collections.
@@ -136,7 +136,7 @@ This project intentionally preserves original audio characteristics while improv
 ### Performance & Scale
 - Input files: 6,236 MP3 files
 - Final duration: ~29 hours
-- Processing speed: ~18–20× real-time (system dependent)
+- Processing speed: ~18–40× real-time (system dependent)
 - Automation level: Fully scripted, repeatable runs
 - Manual steps required: None after setup
 This approach ensures the pipeline remains scalable and reliable even with thousands of inputs.
