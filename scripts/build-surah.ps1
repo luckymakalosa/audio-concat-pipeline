@@ -1,3 +1,6 @@
+# build-surah.ps1
+# Builds individual Surah MP3s from a list of audio files, fixing DTS issues.
+
 $Root = Resolve-Path "$PSScriptRoot\.."
 
 $ListPath   = Join-Path $Root "lists"
