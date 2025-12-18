@@ -1,5 +1,7 @@
 # build-surah.ps1
-# Builds individual Surah MP3s from a list of audio files, fixing DTS issues.
+# Builds individual Surah MP3s from ordered concat lists.
+# Re-encodes audio to 44.1kHz, 128kbps, stereo to fix DTS/codec issues.
+# Ready for long-form aggregation.
 
 $Root = Resolve-Path "$PSScriptRoot\.."
 
