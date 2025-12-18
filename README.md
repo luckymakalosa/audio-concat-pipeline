@@ -85,8 +85,8 @@ Screenshots below demonstrate the pipeline execution, FFmpeg processing, and fin
 ### Building Full Audio Output with Normalization
 ![Building Full Quran with Normalization](screenshots/build-quran.jpg)
 
-### Final Audio File Properties
-![Audio Properties](screenshots/final-audio-file-properties.jpg)
+### Final Audio File
+![Audio Properties](screenshots/final-audio-file.jpg)
 
 ## Audio Processing Details
 - Codec: MP3 (libmp3lame)
