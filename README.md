@@ -1,19 +1,19 @@
-# Audio Concat Pipeline (Al-Qur'an)
+# Audio Concat Pipeline
 
-This project automates merging individual MP3 ayat into:
-- Complete surahs
-- A single full Al-Qur'an audio file
+Automated audio processing pipeline using FFmpeg and PowerShell.
 
-## Features
-- FFmpeg-based audio concatenation
-- Loudness normalization (EBU R128)
-- PowerShell automation
-- Windows-friendly workflow
+This project demonstrates:
+- Batch aggregation of structured audio segments
+- Chapter-level and full-length audio generation
+- Exception handling and sequence validation
+- Loudness normalization for long-duration listening
+- High-performance processing using FFmpeg
 
 ## Tools
 - FFmpeg
 - PowerShell
-- GitHub (Web)
 
-## Use Case
-Designed for long-form audio playback with consistent volume and clean transitions.
+## Use cases
+- Large-scale audio automation
+- Media processing pipelines
+- Batch encoding workflows
