@@ -40,6 +40,19 @@ Originally built for a structured spoken-audio corpus, the pipeline is **domain-
 
 ---
 
+## Project Structure
+audio-concat-pipeline/
+├── scripts/
+│ ├── generate-list.ps1 # Build ordered concat lists
+│ ├── build-surah.ps1 # Segment → collection merge
+│ └── build-quran.ps1 # Collection → full-length merge
+├── ffmpeg/
+│ └── commands.md # FFmpeg reference commands
+└── README.md
+
+---
+
+
 ## Usage
 ### Generate concat list
 ```powershell
