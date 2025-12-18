@@ -2,10 +2,15 @@
 # Merges small audio segments into grouped outputs
 # using FFmpeg concat demuxer.
 
-$lists = Get-ChildItem -Filter *.txt
+param (
+    [string]$InputPath = ".\surah",
+    [string]$OutputFile = "quran.txt"
+)
 
-foreach ($list in $lists) {
-    $output = [System.IO.Path]::ChangeExtension($list.Name, ".mp3")
+Get-ChildItem $InputPath -Filter "*.mp3" |
+    Sort-Object Name |
+    ForEach-Object {
+        "file '$($_.FullName)'"
+    } | Out-File $OutputFile -Encoding utf8
 
-    ffmpeg -f concat -safe 0 -i $list.FullName -c copy $output
-}
+Write-Host "Final Quran concat list generated"
